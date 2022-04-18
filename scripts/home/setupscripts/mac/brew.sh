@@ -94,7 +94,7 @@ brew install --cask firefox
 brew install --cask alfred
 brew install --cask slack
 brew install --cask gimp
-brew install --cask telegram
+# brew install --cask telegram
 brew install --cask muzzle
 brew install --cask beyond-compare
 brew install --cask rectangle
@@ -102,8 +102,9 @@ brew install --cask iterm2
 brew install --cask postico
 brew install --cask figma
 brew install --cask zoom
-brew install --cask spotify
+# brew install --cask spotify
 brew install --cask sourcetree
+brew install --cask microsoft-teams
 brew cleanup
 
 # symlink java
