@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # needed for qlvideo
-sudo softwareupdate --install-rosetta
+# sudo softwareupdate --install-rosetta
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 print_sep "Installing brew packages"
@@ -23,75 +23,79 @@ brew tap homebrew/cask-fonts
 brew update
 
 # You may be asked for user name and password for github when install brew packages
-# You can add an env variable for a (read only) github api key
-# as HOMEBREW_GITHUB_API_TOKEN=
+# You can add an env variable for a (read only) github api key as HOMEBREW_GITHUB_API_TOKEN=
 
 ## -------------CLI tools------------- ##
-#### LINUX ####
+#### LINUX low level ####
 # GNU core utilities (those that come with OS X are outdated) https://wiki.debian.org/coreutils
 brew install coreutils
 # https://joeyh.name/code/moreutils/
 brew install moreutils
 # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
 brew install findutils
-# GNU `sed`
-brew install gnu-sed
-# Keep dotfiles and config files in github for consistency, homeshic symlinks all files from the repo
-brew install homeshick
+# Disk Usage/Free Utility (Linux, BSD, macOS & Windows)
+brew install duf
+# Programmatically correct mistyped console commands
+brew install thefuck
 
+#### config and package manager ####
+# Unix shell that is built on top of bash (the default shell for macOS) with additional features.
+brew install zsh
 # Plugins manager for zsh, called bundles, antigen config is ~/.zsh/universal-antigen.zsh
 brew install antigen
-brew install thefuck
-# trieving files using HTTP, HTTPS, FTP and FTPS
-brew install wget
-brew install git
-brew install zsh
-brew install node
+# Keep dotfiles and config files in github for consistency, homeshic symlinks all files from the repo
+brew install homeshick
+# default app to open files
 brew install duti
-brew install fzf
-brew install fx
-brew install bat
-brew install duf
-brew install exa
-brew install ripgrep
-brew install diff-so-fancy
-brew install betterzip
-brew install sqlite
-brew install openssl
-brew install imagemagick
-brew install youtube-dl
-brew install tree
-brew install pandoc
-brew install pyenv
-brew install chtf
-# used to configure custom keyboards. long install time so uncomment only if you use qmk
-# brew install qmk/qmk/qmk
-brew install trash
 
-
-
-#### Manipulate files ####
+#### Basic file and string commands ####
+# GNU `sed`
+brew install gnu-sed
 # sed for JSON, command-line JSON processor
 brew install jq
+# Command-line JSON processing tool
+brew install fx
+# BetterZip can create archives with these formats: ZIP, DMG, TAR, TGZ, TBZ, TXZ, TZ, Zstandard, Brotli, 7-ZIP, XAR
+# brew install betterzip
+# retrieving files using HTTP, HTTPS, FTP and FTPS
+brew install wget
+# show directory tree
+brew install tree
+# replacement for ls
+brew install exa
+# better cat, Syntax highlighting, git-aware
+brew install bat
+# recursively searches the current directory for a regex pattern
+brew install ripgrep
+# interactive filter that can be used with any list; files, command history, processes, hostnames, bookmarks, git commits, etc.
+brew install fzf
 
+#### security ####
+brew install openssl
 
-#### git ####
-# github cli https://github.com/cli/cli#installation
+#### dev ####
+brew install git
+# github cli https://cli.github.com/manual/
 brew install gh
+# Improved colors for the highlighted bits for git diff
+brew install diff-so-fancy
 
 #### cloud ####
 brew install awscli
 # brew install azure-cli
 brew install terraform
+brew install chtf
+brew install terragrunt
 brew install helm
 brew install kubectl
 
-#### web dev ####
+#### dev ####
+# SQL database engine
+brew install sqlite
 brew install typescript
-
-#### java ####
+brew install node
+brew install pyenv
 # brew install openjdk
-
 
 ## -------------GRAPHICAL APPS------------- ##
 
@@ -113,27 +117,22 @@ brew install --cask google-chrome
 # create presentation with markdown
 brew install --cask deckset
 
-##### programming #####
+##### dev #####
+brew install --cask visual-studio-code
 # better terminal
 brew install --cask iterm2
+# Nerd Fonts takes popular programming fonts and adds a bunch of Glyphs and icons
+brew install --cask font-hack-nerd-font
 # compare files and folders
 # brew install --cask beyond-compare
 # schedule tasks, manage files, save documents, set reminders, keep agendas, and organize their work
 # brew install --cask notion
 # markdown editor
 # brew install --cask macdown
-brew install --cask visual-studio-code
 # GUI git client
 # brew install --cask sourcetree
 # postgres database client
 # brew install --cask postico
-# Nerd Fonts takes popular programming fonts and adds a bunch of Glyphs and icons
-brew install --cask font-hack-nerd-font
-
-##### web dev #####
-# UI/UX software
-# brew install --cask figma
-
 
 ##### Image/Video #####
 # display thumbnails, static previews, cover art and metadata for most types of video files
