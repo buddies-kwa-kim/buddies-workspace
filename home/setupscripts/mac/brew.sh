@@ -11,10 +11,14 @@ if grep --quiet "$replaceLine" "/Users/$(whoami)/.zprofile"; then
  echo "Brew shell already setup"
 else
    echo "Adding brew shell to .zprofile ($replaceLine)"
-   sudo -- sh -c -e "echo '$replaceLine' >> /Users/$(whoami)/.zprofile";
+   #sudo -- sh -c -e "echo '$replaceLine' >> /Users/$(whoami)/.zprofile";
+   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
 fi
 
-eval "$(brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+#eval "$(brew shellenv)"
+
+print_sep "Installing brew packages"
 brew tap homebrew/cask-fonts
 brew update
 
