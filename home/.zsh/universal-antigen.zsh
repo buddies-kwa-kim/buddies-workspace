@@ -9,10 +9,8 @@ antigen bundle node
 antigen bundle macos
 antigen bundle thefuck
 antigen bundle z
-
 antigen bundle isodate
 antigen bundle history
-antigen bundle command-not-found
 #  adds a lwd function to jump to the last working directory.
 antigen bundle last-working-dir
 # autojump is a faster way to navigate your filesystem. It works by maintaining a database of the directories you use the most from the command line.
