@@ -76,7 +76,7 @@ brew install openssl
 #### dev ####
 brew install git
 # github cli https://cli.github.com/manual/
-brew install gh
+# brew install gh
 # Improved colors for the highlighted bits for git diff
 brew install diff-so-fancy
 
