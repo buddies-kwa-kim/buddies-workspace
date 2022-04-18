@@ -62,9 +62,10 @@ Do this now - add the files to a repo on your github so they're ready for your n
 
 ## Preparation steps on a brand new Mac
 
-1. I open Safari and download chrome
-1. I set that up manually because i need to get my ssh certs and the setup scripts from the web
-1. On newer versions of MacOS you have to give your terminal application "Full Disk Access" in the privacy section of system preferences before starting.
+1.  Open Safari and download chrome
+2.  Set that up manually because i need to get my ssh certs and the setup scripts from the web
+3.  On newer versions of MacOS you have to give your terminal application "Full Disk Access" in the privacy section of system preferences before starting.
+6. In GitHub, create a Personal Access Token with full repo access
 
 ## Preparation steps on a brand new Windows WSL2 machine
 
