@@ -10,9 +10,11 @@ The setup script should be repeatable without causing any issues. However - Thes
 ## What the setup scripts will do
 
 The setup scripts will perform the following:
-
+1. execute /home/setupscripts/sharedSetup.sh
+- ask for GIT_H_EMAIL_ADDRESS, GIT_H_NAME, sudo 
 - ~~install rosetta~~
-- install XCode command line tools
+- ~~install XCode command line tools~~
+
 - install homebrew
 - install 30+ tools and apps that via homebrew
 - install nvm
