@@ -105,10 +105,8 @@ Contact me on twitter - @darraghor , or on the email address you received when p
 ## After installing
 
 1. I print out a list of suggested manual steps after the scripts have run. You don't have to do these. It's just things that I usually do!
-1. Any of the GUI apps installed with brew will need to be opened once in MacOS to "allow running downloaded apps" before they will get indexed in finder or Alfred - I usually go through all of them in one go and open them.
-1. Docker desktop seems to be better when installed from the download on the docker site - https://docs.docker.com/get-docker/
-1. Microsoft One Note is the same. Better to get from the site than from homebrew - https://www.onenote.com/download
-1. I use beyond compare as a visual diff tool for git, but it requires a licence. You can change git to use any visual difftool you like with
+2. Any of the GUI apps installed with brew will need to be opened once in MacOS to "allow running downloaded apps" before they will get indexed in finder or Alfred - I usually go through all of them in one go and open them.
+4. Docker desktop seems to be better when installed from the download on the docker site - https://docs.docker.com/get-docker/
 
 ```shell
 git config --global diff.tool bc3
@@ -120,5 +118,5 @@ git config --global mergetool.bc3.trustExitCode true
 Windows WSL notes
 
 1. I use Ubuntu on WSL.
-1. Homebrew etc obviously won't work on mac. But you use the same script `home/setupscripts/sharedSetup.sh` on windows. It will detect the OS and use apt where possible to install terminal tooling.
-1. All the cli tools that work on WSL are installed and the prompt looks and works very similar to the MacOs prompt. Aliases replicate MacOS usage where possible. This is the point of this script.
+2. . Homebrew etc obviously won't work on mac. But you use the same script `home/setupscripts/sharedSetup.sh` on windows. It will detect the OS and use apt where possible to install terminal tooling.
+3. All the cli tools that work on WSL are installed and the prompt looks and works very similar to the MacOs prompt. Aliases replicate MacOS usage where possible. This is the point of this script.
