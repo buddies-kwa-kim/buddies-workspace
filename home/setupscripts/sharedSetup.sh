@@ -115,7 +115,7 @@ printf "\n"
 echo "configure homeshick and your dotfiles to use your own repo with the following commands:"
 echo "homeshick clone buddies-kwa-kim/workspace-scripts"
 echo "homeshick link workspace-scripts"
-"
+
 printf "\n"
 echo "Set your DNS to 8.8.8.8 to stop DNS lookup errors"
 echo "Add an npm token to the ~/.npmrc that was created if publishing from this machine"
