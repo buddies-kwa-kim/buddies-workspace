@@ -3,15 +3,9 @@ https://www.darraghoriordan.com/2022/01/28/developer-shell-modern-bat-fzf-antige
 
 ## Overview
 
-This is a set of scripts to configure a MacOs or Linux machine.
+This is a set of scripts to configure a MacOs or Linux machine. It's mostly MacOS but it can also be used to configure WSL on windows. On a MAC it will do everything. On WSL it sets up CLI tools and prompt only.
 
-It's mostly MacOS but it can also be used to configure WSL on windows.
-
-On a MAC it will do everything. On WSL it sets up CLI tools and prompt only.
-
-The setup script should be repeatable without causing any issues. It works on my machine(s).
-
-However - These scripts are designed for NEW machines. If you try to install it on an existing machine there might be conflict issues where I use brew and the existing install is another method.
+The setup script should be repeatable without causing any issues. However - These scripts are designed for NEW machines. If you try to install it on an existing machine there might be conflict issues where I use brew and the existing install is another method.
 
 ## What the setup scripts will do
 
