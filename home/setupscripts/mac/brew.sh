@@ -69,11 +69,13 @@ brew install bat
 brew install ripgrep
 # interactive filter that can be used with any list; files, command history, processes, hostnames, bookmarks, git commits, etc.
 brew install fzf
+# navigate through directories more efficiently
+brew install autojump
 
 #### security ####
 brew install openssl
 
-#### dev ####
+#### git ####
 brew install git
 # github cli https://cli.github.com/manual/
 # brew install gh
@@ -89,7 +91,6 @@ brew install terragrunt
 brew install kubectl
 brew install kubectx
 brew install helm
-
 
 #### dev ####
 # SQL database engine
