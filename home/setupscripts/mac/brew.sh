@@ -3,9 +3,12 @@
 # needed for qlvideo
 # sudo softwareupdate --install-rosetta
 
+print_sep "Installing Homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
 print_sep "Installing brew packages"
 
+# adding brew to path
 replaceLine='eval "$(/opt/homebrew/bin/brew shellenv)"'
 if grep --quiet "$replaceLine" "/Users/$(whoami)/.zprofile"; then
  echo "Brew shell already setup"
@@ -13,9 +16,7 @@ else
    echo "Adding brew shell to .zprofile ($replaceLine)"
    sudo -- sh -c -e "echo '$replaceLine' >> /Users/$(whoami)/.zprofile";
 fi
-
 eval "$(/opt/homebrew/bin/brew shellenv)"
-#eval "$(brew shellenv)"
 
 print_sep "Installing brew packages"
 brew tap homebrew/cask-fonts
