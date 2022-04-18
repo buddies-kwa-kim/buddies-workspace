@@ -85,15 +85,12 @@ wsl --install <latest ubuntu distrib>
    e.g. `cd home/setupscripts && ./sharedSetup.sh`
    ! If you try to run the script from outside of this folder some of the references to other scripts may break.
 2. You will be asked for your github email and username as part of the setup. This is for configuring the global git user
-3. On MacOS If the script is failing you might need to remove the quarantine - `xattr -d com.apple.quarantine /PATH/TO/SCRIPTYOUCANTRUN.sh` for each one.
 
+! On MacOS If the script is failing you might need to remove the quarantine - `xattr -d com.apple.quarantine /PATH/TO/SCRIPTYOUCANTRUN.sh` for each one.
 Scripts might fail in parts due to existing conflicts, or if MacOS has changed something in your version, from the version I test on.
-
 If a script fails you can manually run each part from where it broke by copying and pasting the remaining commands.
 
 Also, the scripts are designed to be safely repeatable so you can start from the start if you resolve the reason a script had issues.
-
-Contact me on twitter - @darraghor , or on the email address you received when purchasing and I'll try to help out.
 
 ## Now setup your terminal!
 
