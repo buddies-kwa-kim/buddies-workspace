@@ -17,7 +17,7 @@ However - These scripts are designed for NEW machines. If you try to install it 
 
 The setup scripts will perform the following:
 
-- ~~install rosetta
+- ~~install rosetta~~
 - install XCode command line tools
 - install homebrew
 - install 30+ tools and apps that via homebrew
