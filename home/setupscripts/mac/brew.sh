@@ -6,13 +6,12 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 print_sep "Installing brew packages"
 
-replaceLine='eval "$(brew shellenv)"'
+replaceLine='eval "$(/opt/homebrew/bin/brew shellenv)"'
 if grep --quiet "$replaceLine" "/Users/$(whoami)/.zprofile"; then
  echo "Brew shell already setup"
 else
    echo "Adding brew shell to .zprofile ($replaceLine)"
-   #sudo -- sh -c -e "echo '$replaceLine' >> /Users/$(whoami)/.zprofile";
-   echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/$(whoami)/.zprofile
+   sudo -- sh -c -e "echo '$replaceLine' >> /Users/$(whoami)/.zprofile";
 fi
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -25,8 +24,9 @@ brew update
 # You may be asked for user name and password for github when install brew packages
 # You can add an env variable for a (read only) github api key as HOMEBREW_GITHUB_API_TOKEN=
 
-## -------------CLI tools------------- ##
-#### LINUX low level ####
+## -------------Terminal tools------------- ##
+
+#### linux commands ####
 # GNU core utilities (those that come with OS X are outdated) https://wiki.debian.org/coreutils
 brew install coreutils
 # https://joeyh.name/code/moreutils/
@@ -38,7 +38,7 @@ brew install duf
 # Programmatically correct mistyped console commands
 brew install thefuck
 
-#### config and package manager ####
+#### tools to configure with config files ####
 # Unix shell that is built on top of bash (the default shell for macOS) with additional features.
 brew install zsh
 # Plugins manager for zsh, called bundles, antigen config is ~/.zsh/universal-antigen.zsh
@@ -48,7 +48,7 @@ brew install homeshick
 # default app to open files
 brew install duti
 
-#### Basic file and string commands ####
+#### basic file and string commands ####
 # GNU `sed`
 brew install gnu-sed
 # sed for JSON, command-line JSON processor
@@ -84,18 +84,22 @@ brew install diff-so-fancy
 brew install awscli
 # brew install azure-cli
 brew install terraform
-brew install chtf
+brew install docker
 brew install terragrunt
-brew install helm
 brew install kubectl
+brew install kubectx
+brew install helm
+
 
 #### dev ####
 # SQL database engine
-brew install sqlite
-brew install typescript
 brew install node
+brew install typescript
 brew install pyenv
-# brew install openjdk
+brew install sqlite
+brew install openjdk
+
+
 
 ## -------------GRAPHICAL APPS------------- ##
 
@@ -115,7 +119,7 @@ brew install --cask flux
 brew install --cask google-chrome
 # brew install --cask firefox
 # create presentation with markdown
-brew install --cask deckset
+# brew install --cask deckset
 
 ##### dev #####
 brew install --cask visual-studio-code
@@ -165,7 +169,7 @@ brew cleanup
 
 ##### java #####
 # symlink java
-# sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
 
 # install nvm
