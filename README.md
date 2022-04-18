@@ -7,7 +7,7 @@ This is a set of scripts to configure a \*nix computer.
 
 It's mostly MacOS but it can also be used to configure WSL on windows.
 
-On a mac it will do everything. On WSL it sets up CLI tools and prompt only.
+On a MAC it will do everything. On WSL it sets up CLI tools and prompt only.
 
 The setup script should be repeatable without causing any issues. It works on my machine(s).
 
@@ -52,12 +52,10 @@ Scripts are inspired by this and others: https://github.com/mathiasbynens/dotfil
 
 ## Step 1 - Store the files you received in a github repo
 
-The first step is to create a new repository on your own github and put these files in it.
-You will likely make a few changes to customise the configuration for your own preferences.
-
-Homeshick will need a github repo to store and manage your dotfiles.
-
-Do this now - add the files to a repo on your github so they're ready for your next new computer!
+1.The first step is to create a new repository on your own github and put these files in it.
+2. You will likely make a few changes to customise the configuration for your own preferences. Edit `brew.sh` to update the list of packages to install
+3. Create a seperate repos for dotfiles, Homeshick will need a it to store and manage your dotfiles.
+4. Add the files to a repo on your github so they're ready for your next new computer!
 
 ## Preparation steps on a brand new Mac
 
