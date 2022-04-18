@@ -52,17 +52,14 @@ Scripts are inspired by this and others: https://github.com/mathiasbynens/dotfil
 
 ## Step 1 - Store the files you received in a github repo
 
-1.The first step is to create a new repository on your own github and put these files in it.
-2. You will likely make a few changes to customise the configuration for your own preferences. Edit `brew.sh` to update the list of packages to install
-3. Create a seperate repos for dotfiles, Homeshick will need a it to store and manage your dotfiles.
-4. Add the files to a repo on your github so they're ready for your next new computer!
+1. The first step is to create a new repository on your own github and put these files in it.
 
 ## Preparation steps on a brand new Mac
 
-1.  Open Safari and download chrome
-2.  Set that up manually because i need to get my ssh certs and the setup scripts from the web
+1.  Open Safari and download Chrome
 3.  On newer versions of MacOS you have to give your terminal application "Full Disk Access" in the privacy section of system preferences before starting.
 6. In GitHub, create a Personal Access Token with full repo access
+7. Clone this repository locally in `~/utils`
 
 ## Preparation steps on a brand new Windows WSL2 machine
 
@@ -79,16 +76,16 @@ wsl --install <latest ubuntu distrib>
 ## Preparation steps to run the script
 
 1. Review the list of software that will be installed in `brew.sh`. Most of the terminal apps are needed for scripts and aliases. I recommended leaving those in place. Delete or add any of the GUI applications ("casks") as you like.
-1. For ssl certs if you put your certs and config in the `setupscripts/certs` folder before running `setupscripts/sharedSetup.sh` they will be put in "~/.ssh" for you. If this folder is empty we will only try to create the `~/.ssh` folder for you and you can put your certs in later. It goes without saying, but if you're forking this repo, do not ever put your certs in github.
-1. Add a list of github repos to clone in the `cloneRepos.sh` file. These will be cloned after installing your certs.
+2. For ssl certs if you put your certs and config in the `setupscripts/certs` folder before running `setupscripts/sharedSetup.sh` they will be put in "~/.ssh" for you. If this folder is empty we will only try to create the `~/.ssh` folder for you and you can put your certs in later. It goes without saying, but if you're forking this repo, do not ever put your certs in github.
+3. Add a list of github repos to clone in the `cloneRepos.sh` file. These will be cloned after installing your certs in `~/personal-projects`
 
 ## Running the script
 
-1. Run the `home/setupscripts/sharedSetup.sh` script from the `setupscripts` directory to set up everything else. This is script works on Windows and MacOS. It will detect the OS automatically.
+1. cd to `home/setupscripts/` , `chmod +x sharedSetup.sh` then run the `sharedSetup.sh` script to set up everything else. This is script works on Windows and MacOS. It will detect the OS automatically.
    e.g. `cd home/setupscripts && ./sharedSetup.sh`
-   If you try to run the script from outside of this folder some of the references to other scripts may break.
-1. You will be asked for your github email and username as part of the setup. This is for configuring the global git user
-1. On MacOS If the script is failing you might need to `chmod +x sharedSetup.sh`. Alternatively you might need to remove the quarantine - `xattr -d com.apple.quarantine /PATH/TO/SCRIPTYOUCANTRUN.sh` for each one.
+   ! If you try to run the script from outside of this folder some of the references to other scripts may break.
+2. You will be asked for your github email and username as part of the setup. This is for configuring the global git user
+3. On MacOS If the script is failing you might need to remove the quarantine - `xattr -d com.apple.quarantine /PATH/TO/SCRIPTYOUCANTRUN.sh` for each one.
 
 Scripts might fail in parts due to existing conflicts, or if MacOS has changed something in your version, from the version I test on.
 
@@ -100,10 +97,10 @@ Contact me on twitter - @darraghor , or on the email address you received when p
 
 ## Now setup your terminal!
 
-1. Run `homeshick clone your/githubrepo.git`. This is the repo with the files from this pack that you created in step 1 of this file.
-1. It should ask you to link your dotfiles if it's the first time running so press `y`.
-1. Get a new terminal, restart the terminal or you could open iterm now. Antigen should start installing plugins.
-1. You should set the font for the terminal to "Hack Nerd Font" or "Hack" font family so that icons work as expected.
+1. Run `homeshick clone buddies-kwa-kim/workspace-scripts`. This is the repo with the files from this pack that you created in step 1 of this file.
+2. It should ask you to link your dotfiles if it's the first time running so press `y`.
+3. Get a new terminal, restart the terminal or you could open iterm now. Antigen should start installing plugins.
+4. You should set the font for the terminal to "Hack Nerd Font" or "Hack" font family so that icons work as expected.
 
 ## After installing
 
