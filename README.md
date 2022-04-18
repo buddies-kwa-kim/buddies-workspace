@@ -1,235 +1,121 @@
+# My MacOS and Windows WSL setup scripts and dotfiles
+https://www.darraghoriordan.com/2022/01/28/developer-shell-modern-bat-fzf-antigen-zsh-wsl-mac/
 
-# notes
-coding learn
-- os vs programming languages vs programming frameworks
-- linux commands
-- |, ; , &&, tee, >, >>,
-- filesystems: cd, ., .., mkdir, rm -rf, full path vs relative, mv, pwd, find, ls, ll
-- files: cat, tail, less, touch, more, source, tar, diff, wc, EOF
-- editor: touch, vi, nano
-- strings: grep, awsk, sed, sort, echo regex
-- env vars: set, export, alias, acripts
-- iam: whoami, chmod, sudo su, exit
-- commands: man, —help, history
-- processes: ps, kill, top, shutdown now
-- network: ssh, scp, curl, wget, dig, whois, ifconfig, hostname -i
-- terminal shortcuts, ctrl c d e a f
-- editor: vim, nano
-- tools
-- installation steps
-- shell: zsh vs bash vs shell, ohmyzsh, $SHELL, chsh
-- 
-- fzf
-- better grep = ripgrep
-- iterm2: shortcuts, themes, 
-- smart autocompletion = fig
-- better cat = bat
-- better ls = exa
-- aliases
-- package mamager: brew, apt, yum, pip,  npm antigen
-- docker, kubectl, kubectx, terraform,
-- pyenv, 
-- vscode, extensions: intellegi
-- aws cli
-- node, react
-- web2
-- web3
-- data science
-- git branch strategies
-- markdowns
-# Installation guide
-- git, zsh, ohmyzsh
-- VS code, extensions
-- linux aliases
-- ohmyzsh, zshrc plugins, themes
+## Overview
 
-# Windows
+This is a set of scripts to configure a \*nix computer.
 
-## WSL Ubuntu 18.04
+It's mostly MacOS but I also use it to configure WSL on windows.
 
-- https://www.microsoft.com/en-us/p/ubuntu-1804-lts/9n9tngvndl3q?SilentAuth=1&wa=wsignin1.0
-  https://docs.microsoft.com/en-us/windows/wsl/install
+On a mac it will do everything. On WSL it sets up CLI tools and prompt only.
 
-```powershell
-  wsl --install
-  
-```
-```bash
-  wsl
-  sudo apt-get update
-  ln -s /mnt/c/Users/lk_le/Downloads Downloads
-  #mkdir $HOME/utils
-```
+The setup script should be repeatable without causing any issues. It works on my machine(s).
 
-## Graphical Apps
-### Windows Terminal
-- https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?activetab=pivot:overviewtab
-- color scheme = One Half Dark
+However - These scripts are designed for NEW machines. If you try to install it on an existing machine there might be conflict issues where I use brew and the existing install is another method.
 
-### VS Code
-- https://code.visualstudio.com/docs/remote/wsl
-- https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack
+Please hit me up [on Twitter](https://twitter.com/darraghor) if you have any concerns.
 
-### Docker desktop
-- https://docs.docker.com/desktop/windows/wsl/
+## What the setup scripts will do
 
-# Mac OS
-```
-xcode-select --install
-```
+The setup scripts will perform the following:
 
-# Package Manager (Homebrew)
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+- install rosetta
+- install XCode command line tools
+- install homebrew
+- install 60 tools and apps that i use from homebrew
+- install nvm
+- assign all text-like files to vscode
+- heaps of updates to default OS operation such as
+  - Display full POSIX path as Finder window title
+  - Keep folders on top when sorting by name
+  - Avoid creating .DS_Store files on network or USB volumes
+  - Enable snap-to-grid for icons on the desktop and in other icon views
+  - Finder: show all filename extensions
+  - Save to disk (not to iCloud) by default
+  - Disable the warning when changing a file extension
+  - Prevent Photos from opening automatically when devices are plugged in
+- setup github
+- set difftool to bcompare
+- install the pure terminal prompt
+- install the "Hack" nerd font
+- install latest version of zsh
+- install oh my zsh
+- write my preferred oh my zsh configuration and aliases with antigen
+- use homeshick to manage dotfiles
+- add docker local url to hosts
+- install vscode settings and extensions
+- symlink brew java for macos
+- clone my personal repositories from github
+- post a bunch of reminders for manual steps to take to finish configuring the computer
 
-# LinuxBrew only
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.profile
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-sudo apt-get install build-essential
-brew install gcc
-```
+Scripts are inspired by this and others: https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 
-## brew 
+## Step 1 - Store the files you received in a github repo
 
-## iterm2
-```
-# MaC OS only (not WSL)
-brew cask install iterm2 
-```
-## VS Code
-```
-brew cask install visual-studio-code
-```
+The first step is to create a new repository on your own github and put these files in it.
 
-# Homebrew
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-## git
-```bash
-#sudo apt-get install git
-brew install git
-```
-## zsh
-```bash
-sudo apt install zsh
-chsh -s $(which zsh)
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-```vim
-# ~/.zshrc
-plugins=(themes,git,aliases,common-aliases,history,aws,gcloud,docker,kubectl,kubectx,pyenv,terraform)
+You will likely make a few changes to customise the configuration for your own preferences.
+
+Homeshick will need a github repo to store and manage your dotfiles.
+
+Do this now - add the files to a repo on your github so they're ready for your next new computer!
+
+## Preparation steps on a brand new Mac
+
+1. I open Safari and download chrome
+1. I set that up manually because i need to get my ssh certs and the setup scripts from the web
+1. On newer versions of MacOS you have to give your terminal application "Full Disk Access" in the privacy section of system preferences before starting.
+
+## Preparation steps on a brand new Windows WSL2 machine
+
+1. For WSL you need to have WSL 2+ and Ubuntu installed.
+
+## Preparation steps to run the script
+
+1. Review the list of software that will be installed in `brew.sh`. Most of the terminal apps are needed for scripts and aliases. I recommended leaving those in place. Delete or add any of the GUI applications ("casks") as you like.
+1. For ssl certs if you put your certs and config in the `setupscripts/certs` folder before running `setupscripts/sharedSetup.sh` they will be put in "~/.ssh" for you. If this folder is empty we will only try to create the `~/.ssh` folder for you and you can put your certs in later. It goes without saying, but if you're forking this repo, do not ever put your certs in github.
+1. Add a list of github repos to clone in the `cloneRepos.sh` file. These will be cloned after installing your certs.
+
+## Running the script
+
+1. Run the `home/setupscripts/sharedSetup.sh` script from the `setupscripts` directory to set up everything else. This is script works on Windows and MacOS. It will detect the OS automatically.
+   e.g. `cd home/setupscripts && ./sharedSetup.sh`
+   If you try to run the script from outside of this folder some of the references to other scripts may break.
+1. You will be asked for your github email and username as part of the setup. This is for configuring the global git user
+1. On MacOS If the script is failing you might need to `chmod +x sharedSetup.sh`. Alternatively you might need to remove the quarantine - `xattr -d com.apple.quarantine /PATH/TO/SCRIPTYOUCANTRUN.sh` for each one.
+
+Scripts might fail in parts due to existing conflicts, or if MacOS has changed something in your version, from the version I test on.
+
+If a script fails you can manually run each part from where it broke by copying and pasting the remaining commands.
+
+Also, the scripts are designed to be safely repeatable so you can start from the start if you resolve the reason a script had issues.
+
+Contact me on twitter - @darraghor , or on the email address you received when purchasing and I'll try to help out.
+
+## Now setup your terminal!
+
+1. Run `homeshick clone your/githubrepo.git`. This is the repo with the files from this pack that you created in step 1 of this file.
+1. It should ask you to link your dotfiles if it's the first time running so press `y`.
+1. Get a new terminal, restart the terminal or you could open iterm now. Antigen should start installing plugins.
+1. You should set the font for the terminal to "Hack Nerd Font" or "Hack" font family so that icons work as expected.
+
+## After installing
+
+1. I print out a list of suggested manual steps after the scripts have run. You don't have to do these. It's just things that I usually do!
+1. Any of the GUI apps installed with brew will need to be opened once in MacOS to "allow running downloaded apps" before they will get indexed in finder or Alfred - I usually go through all of them in one go and open them.
+1. Docker desktop seems to be better when installed from the download on the docker site - https://docs.docker.com/get-docker/
+1. Microsoft One Note is the same. Better to get from the site than from homebrew - https://www.onenote.com/download
+1. I use beyond compare as a visual diff tool for git, but it requires a licence. You can change git to use any visual difftool you like with
+
+```shell
+git config --global diff.tool bc3
+git config --global difftool.bc3.trustExitCode true
+git config --global merge.tool bc3
+git config --global mergetool.bc3.trustExitCode true
 ```
 
-## docker
-- https://docs.docker.com/desktop/windows/wsl/
+Windows WSL notes
 
-## kubectl
-- https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
-
-## terraform
-- https://learn.hashicorp.com/tutorials/terraform/install-cli
-
-```bash
-sudo apt-get update && sudo apt-get install -y gnupg software-properties-common curl
-curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
-sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
-sudo apt-get update && sudo apt-get install terraform
-```
-### chtf
-- https://github.com/Yleisradio/chtf
-
-```bash
-cd $HOME/utils
-curl -L -o chtf-2.1.1.tar.gz https://github.com/Yleisradio/chtf/archive/v2.1.1.tar.gz
-tar -xzvf chtf-2.1.1.tar.gz
-cd chtf-2.1.1/
-make install
-echo "1.0.11" > $HOME/.terraform-version
-~/.zshrc
-######################################################################
-# chtf
-if [[ -f "$HOME/share/chtf/chtf.sh" ]]; then
-    source "$HOME/share/chtf/chtf.sh"
-fi
-if [[ -f "$HOME/.terraform-version" ]]; then
-    chtf "$(< "$HOME/.terraform-version")"
-fi
-```
-
-### terragrunt
-
-### uninstall
-
-
-## awscli
-### install
-
-### uninstall
-## gcloud
-### install
-https://cloud.google.com/sdk/docs/install#linux
-```bash
-curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-381.0.0-linux-x86_64.tar.gz
-tar -xf google-cloud-cli-381.0.0-linux-x86_64.tar.gz -C $HOME
-$HOME/google-cloud-sdk/install.sh
-sudo mkdir /usr/share/google-cloud-sdk/
-sudo cp $HOME/google-cloud-sdk/completion.bash.inc /usr/share/google-cloud-sdk/completion.zsh.inc
-```
-uninstall
-- https://cloud.google.com/sdk/docs/uninstall-cloud-sdk
-```bash
-rm -rf /usr/share/google-cloud-sdk/
-```
-Install common
-
-
-
-Install zsh, ohmyzsh
-
-```
-brew install zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-upgrade_oh_my_zsh
-```
-
-Restart a new iterm2 terminal
-
-```
-echo $SHELL
-```
-
-https://medium.com/ayuth/iterm2-zsh-oh-my-zsh-the-most-power-full-of-terminal-on-macos-bdb2823fb04c
-
-- Themes
-- Plugins
-  https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins
-
-# Web2 dev
-
-- amplify
-- graphql
-- rest
-- django, flask
-- express
-
-# Web3 developpment
-
-- remix
-- js, nextjs
-- react
-- node
-- aliases
-
-# Devops
-
-- python, venv
-- docker, packer, ansible
-- kubectl, kubens,kubectx, helm, kind
-- terraform, chtf
-- awscli, gcloud,
-- aliases
-
-# datascience
-
-- python panda numby sciktlearn tensorflow
+1. I use Ubuntu on WSL.
+1. Homebrew etc obviously won't work on mac. But you use the same script `home/setupscripts/sharedSetup.sh` on windows. It will detect the OS and use apt where possible to install terminal tooling.
+1. All the cli tools that work on WSL are installed and the prompt looks and works very similar to the MacOs prompt. Aliases replicate MacOS usage where possible. This is the point of this script.
