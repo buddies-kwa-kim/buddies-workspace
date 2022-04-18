@@ -26,6 +26,13 @@ fi
 # Now load our custom plugins and config for antigen
 [[ -f ~/.zsh/universal-antigen.zsh ]] && source ~/.zsh/universal-antigen.zsh
 
+# chtf config
+# https://github.com/Yleisradio/chtf
+# https://github.com/Yleisradio/chtf
+if [[ -f "$(brew --prefix)/share/chtf/chtf.sh" ]]; then
+    source "$(brew --prefix)/share/chtf/chtf.sh"
+fi
+
 # now load the aliases and and other customizations
 source ~/.zsh/universal-aliases.zsh
 
