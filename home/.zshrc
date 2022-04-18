@@ -17,24 +17,19 @@ set -o noclobber
 # load the universal env vars
 source ~/.zsh/universal-envvars.zsh
 
-# next load antigen plugin manager
+# now load the aliases and and other customizations
+[[ -f ~/.zsh/universal-aliases.zsh ]] && source ~/.zsh/universal-aliases.zsh
+
+# Antige: load antigen plugin manager
 if [ "$machine" = "Mac" ]; then
   source $(brew --prefix)/share/antigen/antigen.zsh
 else
   source ~/antigen.zsh
 fi
+
 # Now load our custom plugins and config for antigen
 [[ -f ~/.zsh/universal-antigen.zsh ]] && source ~/.zsh/universal-antigen.zsh
 
-# chtf config
-# https://github.com/Yleisradio/chtf
-# https://github.com/Yleisradio/chtf
-if [[ -f "$(brew --prefix)/share/chtf/chtf.sh" ]]; then
-    source "$(brew --prefix)/share/chtf/chtf.sh"
-fi
-
-# now load the aliases and and other customizations
-source ~/.zsh/universal-aliases.zsh
 
 if [ "$machine" = "Mac" ]; then
   source ~/.zsh/mac-aliases.zsh
