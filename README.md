@@ -5,7 +5,7 @@ https://www.darraghoriordan.com/2022/01/28/developer-shell-modern-bat-fzf-antige
 
 This is a set of scripts to configure a \*nix computer.
 
-It's mostly MacOS but I also use it to configure WSL on windows.
+It's mostly MacOS but it can also be used to configure WSL on windows.
 
 On a mac it will do everything. On WSL it sets up CLI tools and prompt only.
 
@@ -53,7 +53,6 @@ Scripts are inspired by this and others: https://github.com/mathiasbynens/dotfil
 ## Step 1 - Store the files you received in a github repo
 
 The first step is to create a new repository on your own github and put these files in it.
-
 You will likely make a few changes to customise the configuration for your own preferences.
 
 Homeshick will need a github repo to store and manage your dotfiles.
@@ -70,6 +69,14 @@ Do this now - add the files to a repo on your github so they're ready for your n
 ## Preparation steps on a brand new Windows WSL2 machine
 
 1. For WSL you need to have WSL 2+ and Ubuntu installed.
+2. https://docs.microsoft.com/en-us/windows/wsl/install
+
+```shell
+wsl.exe -l -o
+wsl --install <latest ubuntu distrib>
+```
+4. https://docs.microsoft.com/en-us/windows/wsl/setup/environment
+
 
 ## Preparation steps to run the script
 
