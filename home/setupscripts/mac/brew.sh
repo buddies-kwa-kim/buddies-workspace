@@ -38,8 +38,12 @@ brew install findutils
 brew install gnu-sed
 # Keep dotfiles and config files in github for consistency, homeshic symlinks all files from the repo
 brew install homeshick
+
+# Plugins manager for zsh, called bundles, antigen config is ~/.zsh/universal-antigen.zsh
 brew install antigen
 brew install thefuck
+# trieving files using HTTP, HTTPS, FTP and FTPS
+brew install wget
 brew install git
 brew install zsh
 brew install node
@@ -58,10 +62,13 @@ brew install imagemagick
 brew install youtube-dl
 brew install tree
 brew install pandoc
+brew install pyenv
+brew install chtf
 # used to configure custom keyboards. long install time so uncomment only if you use qmk
 # brew install qmk/qmk/qmk
 brew install trash
-brew install wget
+
+
 
 #### Manipulate files ####
 # sed for JSON, command-line JSON processor
@@ -78,10 +85,9 @@ brew install awscli
 brew install terraform
 brew install helm
 brew install kubectl
+
 #### web dev ####
 brew install typescript
-
-
 
 #### java ####
 # brew install openjdk
