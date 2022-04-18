@@ -93,29 +93,43 @@ else
    echo "Adding Docker host to /etc/hosts"
     sudo -- sh -c -e "echo '$replaceLine' >> /etc/hosts";
 fi
-print_sep "installing vscode extensions..."
-# vscode extensions i use all the time
+print_sep "Installing vscode extensions..."
+## common
+code --install-extension redhat.vscode-xml
+code --install-extension redhat.vscode-yaml
+code --install-extension streetsidesoftware.code-spell-checker
+code --install-extension hediet.vscode-drawio
+code --install-extension esbenp.prettier-vscode
+code --install-extension eamodio.gitlens
+code --install-extension donjayamanne.githistory
+code --install-extension mhutchie.git-graph
+# code --install-extension GitHub.copilot
+
+## web
 code --install-extension bradlc.vscode-tailwindcss
 code --install-extension dbaeumer.vscode-eslint
-code --install-extension esbenp.prettier-vscode
-code --install-extension hediet.vscode-drawio
 code --install-extension mikestead.dotenv
-code --install-extension redhat.vscode-xml
-code --install-extension streetsidesoftware.code-spell-checker
-# Comment/uncomment for copilot. You probably don't want to install this at work or if you arent on the program
-code --install-extension GitHub.copilot
+code --install-extension ritwickdey.LiveServer
 
+## devops
+code --install-extension hashicorp.terraform
+code --install-extension ms-azuretools.vscode-docker
+
+# Copy ssl certs 
+print_sep "Copying ssl certs from certs/* to ~/.ssh"
 source ./certs/installCerts.sh
+
+# Clone project repos
+print_sep "Cloning repos to ~/personal-projects"
 source ./cloneRepos.sh
 
 print_sep "Finished all"
 printf "\n"
 echo "DON'T FORGET THESE MANUAL STEPS"
 printf "\n"
-echo "configure homeshick and your dotfiles to use your own repo with the following commands:"
+echo "Configure homeshick and your dotfiles to use your own repo with the following commands:"
 echo "homeshick clone buddies-kwa-kim/workspace-scripts"
 echo "homeshick link workspace-scripts"
-
 printf "\n"
 echo "Set your DNS to 8.8.8.8 to stop DNS lookup errors"
 echo "Add an npm token to the ~/.npmrc that was created if publishing from this machine"
