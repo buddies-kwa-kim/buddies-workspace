@@ -100,6 +100,8 @@ brew install pyenv
 brew install sqlite
 brew install openjdk
 
+#### theme ####
+brew install pure
 
 
 ## -------------GRAPHICAL APPS------------- ##
@@ -149,7 +151,7 @@ brew install --cask font-hack-nerd-font
 # screencasting and video editing software
 # brew install --cask screenflow
 # Saves disk space & bandwidth by compressing images without losing quality.
-brew install --cask ImageOptim
+# brew install --cask ImageOptim
 
 ##### conferencing #####
 # brew install --cask zoom
