@@ -5,7 +5,6 @@ print_sep "Setting up mac"
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
-xcode-select --install
 source ./mac/brew.sh
 source ./mac/duti.sh
 source ./mac/macos-config.sh
