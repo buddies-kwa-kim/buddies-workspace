@@ -44,3 +44,5 @@ antigen bundle sindresorhus/pure@main
 
 # Tell Antigen that you're done.
 antigen apply
+
+antigen update
