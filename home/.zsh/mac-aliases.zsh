@@ -9,6 +9,8 @@ alias hidehidden="defaults write com.apple.finder AppleShowAllFiles FALSE && kil
 
 alias cat="bat --paging=never"
 
+
+# open google history
 function ch() {
   local cols sep google_history open
   cols=$(( COLUMNS / 3 ))
