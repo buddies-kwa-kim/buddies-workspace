@@ -21,6 +21,7 @@ antigen bundle aws
 antigen bundle terraform
 antigen bundle docker
 antigen bundle kubectl
+antigen bundle helm
 antigen bundle pyenv
 
 
