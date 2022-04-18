@@ -12,6 +12,10 @@ antigen bundle z
 antigen bundle git
 antigen bundle isodate
 antigen bundle history
+antigen bundle command-not-found
+antigen bundle docker
+antigen bundle kubectl
+
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-autosuggestions
