@@ -1,5 +1,3 @@
-
-
 # detect the machine we're running on
 # assume linux is wsl on windows (although any ubuntu should be ok)
 unameOut="$(uname -s)"
@@ -30,6 +28,8 @@ fi
 # Now load our custom plugins and config for antigen
 [[ -f ~/.zsh/universal-antigen.zsh ]] && source ~/.zsh/universal-antigen.zsh
 
+# autojump
+[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 if [ "$machine" = "Mac" ]; then
   source ~/.zsh/mac-aliases.zsh
