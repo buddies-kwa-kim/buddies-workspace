@@ -12,7 +12,7 @@ The setup script should be repeatable without causing any issues. However - Thes
 
 | Tool  |  Description | Installation  | Script  |
 |-------|--------------|---------------|---------|
-| brew  | testtabl | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  |   | brew.sh  |
+| brew  | testtabl | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" | brew.sh  |
 |   |   |   |   |   |
 |   |   |   |   |   |
 ## What the setup scripts will do
