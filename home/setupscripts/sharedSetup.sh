@@ -33,7 +33,7 @@ print_sep "Checking OS"
 if [ "$(uname)" = "Darwin" ]; then
   echo "Running Mac OS setup."
   echo "Brew will ask you for a github login, you may be asked for sudo also."
-  source ./mac/macSetup.sh
+  source ./mac/mac-setup.sh
 else
   # assume linux wsl on windows
   echo "Running linux setup."
