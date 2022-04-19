@@ -4,16 +4,8 @@
 print_sep "Installing Homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# adding brew to path
-replaceLine='eval "$(/opt/homebrew/bin/brew shellenv)"'
-if grep --quiet "$replaceLine" "/Users/$(whoami)/.zprofile"; then
- echo "Brew shell already setup"
-else
-   echo "Adding brew shell to .zprofile ($replaceLine)"
-   sudo -- sh -c -e "echo '$replaceLine' >> /Users/$(whoami)/.zprofile";
-fi
+# adding brew to path for the session
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
 
 #### Brew packages ####
 print_sep "Installing brew packages"
@@ -21,8 +13,8 @@ brew tap homebrew/cask-fonts
 brew update
 
 # You may be asked for user name and password for github when install brew packages
-# You can add an env variable for a (read only) github api key as HOMEBREW_GITHUB_API_TOKEN=
-
+echo "Env variable for a (read only) github api key as HOMEBREW_GITHUB_API_TOKEN="
+read HOMEBREW_GITHUB_API_TOKEN=
 ## -------------Terminal tools------------- ##
 
 #### linux commands ####
@@ -77,7 +69,7 @@ brew install openssl
 #### git ####
 brew install git
 # github cli https://cli.github.com/manual/
-# brew install gh
+brew install gh
 # Improved colors for the highlighted bits for git diff
 brew install diff-so-fancy
 
