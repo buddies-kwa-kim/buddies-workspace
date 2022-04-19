@@ -8,6 +8,13 @@ This is a set of scripts to configure MacOs or Linux machines. It's mostly MacOS
 
 The setup script should be repeatable without causing any issues. However - These scripts are designed for NEW machines. If you try to install it on an existing machine there might be conflict issues where I use brew and the existing install is another method.
 
+## Tools installed
+
+| Tool  |  Description | Installation  | Script  |
+|-------|--------------|---------------|---------|
+| brew  | testtabl | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  |   | brew.sh  |
+|   |   |   |   |   |
+|   |   |   |   |   |
 ## What the setup scripts will do
 
 The setup scripts will perform the following:
