@@ -30,8 +30,7 @@ fi
 
 if [ "$machine" = "Mac" ]; then
   source ~/.zsh/mac-aliases.zsh
-  # load fzf autocompletion and key bindings
-  source ~/.zsh/mac-fzf.zsh
+  
 else
   source ~/.zsh/wsl-aliases.zsh
   source ~/.zsh/wsl-startagent.zsh
