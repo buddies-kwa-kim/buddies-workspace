@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 
+mkdir -p $HOME/.antigen/
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 

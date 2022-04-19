@@ -102,7 +102,7 @@ brew install --cask flux
 # brew install --cask alfred
 # resize windows
 # brew install --cask rectangle
-brew reinstall --cask google-chrome
+brew install --cask google-chrome
 # brew install --cask firefox
 # create presentation with markdown
 # brew install --cask deckset
