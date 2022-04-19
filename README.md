@@ -11,12 +11,13 @@ The setup script should be repeatable without causing any issues. However - Thes
 # MacOS
 ## Tools installed
 
-Category | Tool  |  Description | Installation  | Script  |
-|--------|-------|--------------|---------------|---------|
-| Package manager | brew  | [package manager for Linux](https://en.wikipedia.org/wiki/Homebrew_(package_manager))| ```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"``` | brew.sh |
-| Linux core | coreutils | [basic file, shell and text manipulation utilities](https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands) | ```brew install coreutils``` | brew.sh |
-| Linux core | findutils | [basic directory searching utilities](https://www.gnu.org/software/findutils/) | ```brew install findutils``` | brew.sh |
-| moreutils  |   |   |   |   |
+| Category | Tool  |  Description | Installation  | Configuration  |
+|----------|-------|--------------|---------------|----------------|
+| Package manager | brew  | [package manager for Linux](https://en.wikipedia.org/wiki/Homebrew_(package_manager)) | ```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"``` | default |
+| Linux core | coreutils | [basic file, shell and text manipulation utilities](https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands) | ```brew install coreutils``` | default |
+| Linux core | findutils | [basic directory searching utilities](https://www.gnu.org/software/findutils/) | ```brew install findutils``` | default |
+| Linux core | duf ||   | ```duf --avail-threshold="10G,1G"
+duf --usage-threshold="0.5,0.9"```|
 | findutils  |   |   |   |   |
 | duf  |   |   |   |   |
 | moreutils  |   |   |   |   |
