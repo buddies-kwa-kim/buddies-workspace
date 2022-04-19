@@ -102,13 +102,13 @@ brew install --cask flux
 # brew install --cask alfred
 # resize windows
 # brew install --cask rectangle
-brew install --cask google-chrome
+brew reinstall --cask google-chrome
 # brew install --cask firefox
 # create presentation with markdown
 # brew install --cask deckset
 
 ##### dev #####
-brew install --cask docker
+brew reinstall --cask docker
 brew install --cask visual-studio-code
 # better terminal
 brew install --cask iterm2

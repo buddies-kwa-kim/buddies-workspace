@@ -40,8 +40,6 @@ else
   source ./wsl-ubuntu/windows-wsl-setup.sh
 fi
 
-
-
 # configure git
 print_sep "Configure git"
 source ./git-config.sh

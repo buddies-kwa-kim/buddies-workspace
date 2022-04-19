@@ -196,5 +196,3 @@ sudo pmset -c sleep 0
 
 # Set machine sleep to 5 minutes on battery
 sudo pmset -b sleep 5
-
-echo "\n defaults configured \n"

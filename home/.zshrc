@@ -11,14 +11,12 @@ esac
 
 set -o noclobber
 
-print_sep "Load envvars and aliases"
 # load the universal env vars
 [[ -f ~/.zsh/universal-envvars.zsh ]] && source ~/.zsh/universal-envvars.zsh
 # now load the aliases and and other customizations
 [[ -f ~/.zsh/universal-aliases.zsh ]] && source ~/.zsh/universal-aliases.zsh
 
 # Antigen: load antigen plugin manager
-print_sep "Load antigen"
 if [ "$machine" = "Mac" ]; then
   source $(brew --prefix)/share/antigen/antigen.zsh
 else

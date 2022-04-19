@@ -6,6 +6,7 @@ print_sep "Setting up mac"
 osascript -e 'tell application "System Preferences" to quit'
 
 #install rosetta
+print_sep "Installing rosetta"
 /usr/sbin/softwareupdate --install-rosetta --agree-to-license
 
 source ./mac/install-brew-packages.sh
