@@ -2,19 +2,38 @@
 - https://www.darraghoriordan.com/2022/01/28/developer-shell-modern-bat-fzf-antigen-zsh-wsl-mac/
 - https://www.engineeringwithutsav.com/blog/spice-up-your-macos-terminal
 
-## Overview
+# Overview
 
 This is a set of scripts to configure MacOs or Linux machines. It's mostly MacOS but it can also be used to configure WSL on windows. On a MAC it will do everything. On WSL it sets up CLI tools and prompt only.
 
 The setup script should be repeatable without causing any issues. However - These scripts are designed for NEW machines. If you try to install it on an existing machine there might be conflict issues where I use brew and the existing install is another method.
 
+# MacOS
 ## Tools installed
 
-| Tool  |  Description | Installation  | Script  |
-|-------|--------------|---------------|---------|
-| brew  | [package manager for Linux](https://en.wikipedia.org/wiki/Homebrew_(package_manager))| ```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"``` | brew.sh |
-| coreutils | [basic file, shell and text manipulation utilities](https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands) | ```brew install coreutils``` | brew.sh |
-|   |   |   |   |   |
+Category | Tool  |  Description | Installation  | Script  |
+|------------|-------|--------------|---------------|---------|
+| Core Linux | brew  | [package manager for Linux](https://en.wikipedia.org/wiki/Homebrew_(package_manager))| ```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"``` | brew.sh |
+| Core Linux | coreutils | [basic file, shell and text manipulation utilities](https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands) | ```brew install coreutils``` | brew.sh |
+| Core Linux | findutils | [basic directory searching utilities](https://www.gnu.org/software/findutils/) | ```brew install findutils``` | brew.sh |
+| moreutils  |   |   |   |   |
+| findutils  |   |   |   |   |
+| duf  |   |   |   |   |
+| moreutils  |   |   |   |   |
+| moreutils  |   |   |   |   |
+| moreutils  |   |   |   |   |
+| moreutils  |   |   |   |   |
+| moreutils  |   |   |   |   |
+| moreutils  |   |   |   |   |
+| moreutils  |   |   |   |   |
+| moreutils  |   |   |   |   |
+| moreutils  |   |   |   |   |
+| moreutils  |   |   |   |   |
+| moreutils  |   |   |   |   |
+| moreutils  |   |   |   |   |
+| moreutils  |   |   |   |   |
+| moreutils  |   |   |   |   |
+
 ## What the setup scripts will do
 
 The setup scripts will perform the following:
