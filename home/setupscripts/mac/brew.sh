@@ -1,12 +1,8 @@
 #!/usr/bin/env bash
 
-# needed for qlvideo
-# sudo softwareupdate --install-rosetta
-
+#### Brew installation ####
 print_sep "Installing Homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-print_sep "Installing brew packages"
 
 # adding brew to path
 replaceLine='eval "$(/opt/homebrew/bin/brew shellenv)"'
@@ -18,6 +14,8 @@ else
 fi
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+
+#### Brew packages ####
 print_sep "Installing brew packages"
 brew tap homebrew/cask-fonts
 brew update
