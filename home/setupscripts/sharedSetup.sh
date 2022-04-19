@@ -11,6 +11,7 @@ echo "Make sure you've already added your github certs and config to the certs f
 echo "Make sure you have added any github repos to be cloned to cloneRepos.sh"
 read -p "Press any key to continue or ctrl-c to quit and do the steps above... " -n1 -s
 
+# Inputs
 print_sep "Email address and name for git"
 echo "Please enter your email address for git"
 read GIT_H_EMAIL_ADDRESS
@@ -18,6 +19,9 @@ echo "GIT_H_EMAIL_ADDRESS is set to $GIT_H_EMAIL_ADDRESS"
 echo "Please enter your name for git"
 read GIT_H_NAME
 echo "GIT_H_NAME is set to $GIT_H_NAME"
+print_sep "Github API token for Homebrew"
+echo "Please enter your Github API token"
+read HOMEBREW_GITHUB_API_TOKEN
 
 print_sep "Getting sudo"
 # Ask for the administrator password upfront
