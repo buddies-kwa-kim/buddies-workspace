@@ -1,4 +1,5 @@
 # MacOS and Windows WSL setup scripts and dotfiles
+
 - https://www.darraghoriordan.com/2022/01/28/developer-shell-modern-bat-fzf-antigen-zsh-wsl-mac/
 - https://www.engineeringwithutsav.com/blog/spice-up-your-macos-terminal
 
@@ -9,40 +10,34 @@ This is a set of scripts to configure MacOs or Linux machines. It's mostly MacOS
 The setup script should be repeatable without causing any issues. However - These scripts are designed for NEW machines. If you try to install it on an existing machine there might be conflict issues where I use brew and the existing install is another method.
 
 # MacOS
+
 ## Tools installed
 
-| Category | Tool  |  Description | Installation  | Configuration  |
-|----------|-------|--------------|---------------|----------------|
-| Package manager | brew  | [package manager for Linux](https://en.wikipedia.org/wiki/Homebrew_(package_manager)) | ```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"``` | default |
-| Linux core | coreutils | [basic file, shell and text manipulation utilities](https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands) | ```brew install coreutils``` | default |
-| Linux core | findutils | [basic directory searching utilities](https://www.gnu.org/software/findutils/) | ```brew install findutils``` | default |
-| Linux core | duf ||   | ```duf --avail-threshold="10G,1G"
-duf --usage-threshold="0.5,0.9"```|
-| findutils  |   |   |   |   |
-| duf  |   |   |   |   |
-| moreutils  |   |   |   |   |
-| moreutils  |   |   |   |   |
-| moreutils  |   |   |   |   |
-| moreutils  |   |   |   |   |
-| moreutils  |   |   |   |   |
-| moreutils  |   |   |   |   |
-| moreutils  |   |   |   |   |
-| moreutils  |   |   |   |   |
-| moreutils  |   |   |   |   |
-| moreutils  |   |   |   |   |
-| moreutils  |   |   |   |   |
-| moreutils  |   |   |   |   |
-| moreutils  |   |   |   |   |
-| moreutils  |   |   |   |   |
+-> confluence link
 
 ## What the setup scripts will do
 
 The setup scripts will perform the following:
-1. execute /home/setupscripts/sharedSetup.sh
-- ask for GIT_H_EMAIL_ADDRESS, GIT_H_NAME, sudo 
-- ~~install rosetta~~
-- ~~install XCode command line tools~~
 
+1. Run `shared-Setup.sh` from `home/setup-scripts/`
+
+- Provide for GIT_H_EMAIL_ADDRESS, GIT_H_NAME, sudo password
+
+2. `mac-setup.sh`
+
+- Install rosetta `/usr/sbin/softwareupdate --install-rosetta --agree-to-license`
+
+3. `brew.sh`
+
+- Install Homebrew `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"` and add brew to path `eval "$(/opt/homebrew/bin/brew shellenv)"`
+- Install core utils commands: `coreutils` `moreutils` `findutils` `gnu-sed`
+- Install config managers: `duti` `homeshick`
+- Install `zsh` and `antigen`
+- Install JSON commands: `jq` `fx`
+- Install improved commands for linux: `tree` `exa` `bat` `ripgrep` `fzf` `autojump` `thefuck`
+- Install
+
+- install XCode command line tools
 - install homebrew
 - install 30+ tools and apps that via homebrew
 - install nvm
@@ -78,9 +73,9 @@ Scripts are inspired by this and others: https://github.com/mathiasbynens/dotfil
 ## Preparation steps on a brand new Mac
 
 1.  Open Safari and download Chrome
-3.  On newer versions of MacOS you have to give your terminal application "Full Disk Access" in the privacy section of system preferences before starting.
-6. In GitHub, create a Personal Access Token with full repo access
-7. Clone this repository locally in `~/utils`
+2.  On newer versions of MacOS you have to give your terminal application "Full Disk Access" in the privacy section of system preferences before starting.
+3.  In GitHub, create a Personal Access Token with full repo access
+4.  Clone this repository locally in `~/utils`
 
 ## Preparation steps on a brand new Windows WSL2 machine
 
@@ -91,8 +86,8 @@ Scripts are inspired by this and others: https://github.com/mathiasbynens/dotfil
 wsl.exe -l -o
 wsl --install <latest ubuntu distrib>
 ```
-4. https://docs.microsoft.com/en-us/windows/wsl/setup/environment
 
+4. https://docs.microsoft.com/en-us/windows/wsl/setup/environment
 
 ## Preparation steps to run the script
 
@@ -124,7 +119,7 @@ Also, the scripts are designed to be safely repeatable so you can start from the
 
 1. I print out a list of suggested manual steps after the scripts have run. You don't have to do these. It's just things that I usually do!
 2. Any of the GUI apps installed with brew will need to be opened once in MacOS to "allow running downloaded apps" before they will get indexed in finder or Alfred - I usually go through all of them in one go and open them.
-4. Docker desktop seems to be better when installed from the download on the docker site - https://docs.docker.com/get-docker/
+3. Docker desktop seems to be better when installed from the download on the docker site - https://docs.docker.com/get-docker/
 
 ```shell
 git config --global diff.tool bc3

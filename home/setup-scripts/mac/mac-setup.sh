@@ -5,17 +5,14 @@ print_sep "Setting up mac"
 # settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
-source ./mac/brew.sh
-source ./mac/duti.sh
-source ./mac/macos-config.sh
+#install rosetta
+/usr/sbin/softwareupdate --install-rosetta --agree-to-license
 
-# setup vscode
-print_sep "Configuring vscode"
-mkdir -p "$HOME/Library/Application Support/Code/User"
-cp -v ./mac/vscode.settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+source ./mac/install-brew-packages.sh
+source ./mac/set-default-app-filetypes.sh
+source ./mac/set-default-macos.sh
+source ./mac/set-vscode-settings.sh
 
-#print_sep "Setting up fzf keybindings"
-#/usr/local/opt/fzf/install
 
 print_sep "Mac setup complete"
 echo "Setup chrome as email handler in mail"

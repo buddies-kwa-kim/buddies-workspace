@@ -20,30 +20,29 @@ brew install coreutils
 brew install moreutils
 # GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed
 brew install findutils
-# Disk Usage/Free Utility (Linux, BSD, macOS & Windows)
-brew install duf
-# Programmatically correct mistyped console commands
-brew install thefuck
+# GNU `sed`
+brew install gnu-sed
+# ssl certs
+brew install openssl
 
-#### tools to configure with config files ####
+#### Config manager ####
+# default app to open files
+brew install duti
+# Keep dotfiles and config files in github for consistency, homeshick symlinks all files from the repo
+brew install homeshick
+
+#### zsh on steroids ####
+
 # Unix shell that is built on top of bash (the default shell for macOS) with additional features.
 brew install zsh
 # Plugins manager for zsh, called bundles, antigen config is ~/.zsh/universal-antigen.zsh
 brew install antigen
-# Keep dotfiles and config files in github for consistency, homeshic symlinks all files from the repo
-brew install homeshick
-# default app to open files
-brew install duti
-
-#### basic file and string commands ####
-# GNU `sed`
-brew install gnu-sed
 # sed for JSON, command-line JSON processor
 brew install jq
 # Command-line JSON processing tool
 brew install fx
 # BetterZip can create archives with these formats: ZIP, DMG, TAR, TGZ, TBZ, TXZ, TZ, Zstandard, Brotli, 7-ZIP, XAR
-# brew install betterzip
+brew install betterzip
 # retrieving files using HTTP, HTTPS, FTP and FTPS
 brew install wget
 # show directory tree
@@ -58,9 +57,8 @@ brew install ripgrep
 brew install fzf
 # navigate through directories more efficiently
 brew install autojump
-
-#### security ####
-brew install openssl
+# Programmatically correct mistyped console commands
+brew install thefuck
 
 #### git ####
 brew install git
@@ -80,22 +78,20 @@ brew install kubectx
 brew install helm
 
 #### dev ####
-# SQL database engine
-brew install node
-brew install typescript
 brew install pyenv
-brew install sqlite
-brew install openjdk
+# pyenv dependencies
+brew install openssl readline sqlite3 xz zlib
+brew install nvm
+brew install typescript
 
 #### theme ####
 brew install pure
-
 
 ## -------------GRAPHICAL APPS------------- ##
 
 #### Security ####
 # Inspect macOS Installer Packages
-brew install --cask suspicious-package
+#brew install --cask suspicious-package
 
 ##### Productivity #####
 # Changes color of your computer's display adapt to the time of day, warm at night and like sunlight during the day.
@@ -112,6 +108,7 @@ brew install --cask google-chrome
 # brew install --cask deckset
 
 ##### dev #####
+brew install --cask docker
 brew install --cask visual-studio-code
 # better terminal
 brew install --cask iterm2
@@ -156,19 +153,3 @@ brew install --cask slack
 # brew install --cask vlc
 
 brew cleanup
-
-##### java #####
-# symlink java
-sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
-
-
-# install nvm
-print_sep "installing nvm"
-if ! [ -s "$HOME/.nvm/nvm.sh" ]; then
-    echo "installing nvm"
-    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-    echo "you can remove the nvm lines that were added to your .zshrc if you want to keep that file clean."
-    echo "they are already in custom.zsh"
- else
-    echo "nvm detected - skipping nvm install"
- fi

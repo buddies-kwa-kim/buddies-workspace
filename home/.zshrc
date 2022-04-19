@@ -9,16 +9,16 @@ case "${unameOut}" in
     *)          machine="UNKNOWN:${unameOut}"
 esac
 
-# set options for zsh
 set -o noclobber
 
+print_sep "Load envvars and aliases"
 # load the universal env vars
-source ~/.zsh/universal-envvars.zsh
-
+[[ -f ~/.zsh/universal-envvars.zsh ]] && source ~/.zsh/universal-envvars.zsh
 # now load the aliases and and other customizations
 [[ -f ~/.zsh/universal-aliases.zsh ]] && source ~/.zsh/universal-aliases.zsh
 
-# Antige: load antigen plugin manager
+# Antigen: load antigen plugin manager
+print_sep "Load antigen"
 if [ "$machine" = "Mac" ]; then
   source $(brew --prefix)/share/antigen/antigen.zsh
 else
@@ -27,9 +27,8 @@ fi
 
 # Now load our custom plugins and config for antigen
 [[ -f ~/.zsh/universal-antigen.zsh ]] && source ~/.zsh/universal-antigen.zsh
-
-# autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+# Init nvm and pyenv
+[[ -f ~/.zsh/universal-setup-version-managers.zsh ]] && source ~/.zsh/universal-setup-version-managers.zsh
 
 if [ "$machine" = "Mac" ]; then
   source ~/.zsh/mac-aliases.zsh
