@@ -12,8 +12,8 @@ The setup script should be repeatable without causing any issues. However - Thes
 
 | Tool  |  Description | Installation  | Script  |
 |-------|--------------|---------------|---------|
-| brew  | package manager for Linux | /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" | brew.sh |
-| coreutils | basic file, shell and text manipulation utilities https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands | brew install coreutils | brew.sh |
+| brew  | package manager for Linux | ```/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"``` | brew.sh |
+| coreutils | basic file, shell and text manipulation utilities https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands | ```brew install coreutils``` | brew.sh |
 |   |   |   |   |   |
 ## What the setup scripts will do
 
