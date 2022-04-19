@@ -3,20 +3,16 @@
 #### Brew installation ####
 print_sep "Installing Homebrew"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
 # adding brew to path for the session
 eval "$(/opt/homebrew/bin/brew shellenv)"
+
 
 #### Brew packages ####
 print_sep "Installing brew packages"
 brew tap homebrew/cask-fonts
 brew update
 
-# You may be asked for user name and password for github when install brew packages
-echo "Env variable for a (read only) github api key as HOMEBREW_GITHUB_API_TOKEN="
-read HOMEBREW_GITHUB_API_TOKEN=
 ## -------------Terminal tools------------- ##
-
 #### linux commands ####
 # GNU core utilities (those that come with OS X are outdated) https://wiki.debian.org/coreutils
 brew install coreutils
