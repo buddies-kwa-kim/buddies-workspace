@@ -1,8 +1,6 @@
 # MacOS and Windows WSL setup scripts and dotfiles
 
-- https://www.darraghoriordan.com/2022/01/28/developer-shell-modern-bat-fzf-antigen-zsh-wsl-mac/
-- https://www.engineeringwithutsav.com/blog/spice-up-your-macos-terminal
-
+- 
 # Overview
 
 This is a set of scripts to configure MacOs or Linux machines. It's mostly MacOS but it can also be used to configure WSL on windows. On a MAC it will do everything. On WSL it sets up CLI tools and prompt only.
